@@ -18,3 +18,63 @@ type Species struct {
 	Edited          *string
 	Id              string
 }
+
+func (r Species) GetName() string {
+	return r.Name
+}
+
+func (r Species) GetClassification() *string {
+	return r.Classification
+}
+
+func (r Species) GetDesignation() *string {
+	return r.Designation
+}
+
+func (r Species) GetAverageHeight() *float64 {
+	return r.AverageHeight
+}
+
+func (r Species) GetAverageLifespan() *int64 {
+	return r.AverageLifespan
+}
+
+func (r Species) GetEyeColors() []*string {
+	return r.EyeColors
+}
+
+func (r Species) GetHairColors() []*string {
+	return r.HairColors
+}
+
+func (r Species) GetSkinColors() []*string {
+	return r.SkinColors
+}
+
+func (r Species) GetLanguage() *string {
+	return r.Language
+}
+
+func (r Species) GetHomeworld() *Planet {
+	return r.Homeworld
+}
+
+func (r Species) GetPeople() []*Person {
+	return r.People
+}
+
+func (r Species) GetFilms() []*Film {
+	return r.Films
+}
+
+func (r Species) GetCreated() *string {
+	return r.Created
+}
+
+func (r Species) GetEdited() *string {
+	return r.Edited
+}
+
+func (r Species) GetId() string {
+	return r.Id
+}

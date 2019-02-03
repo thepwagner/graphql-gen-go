@@ -5,8 +5,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/thepwagner/magenny/internal/graphql"
-	"github.com/thepwagner/magenny/internal/test"
+	"github.com/thepwagner/graphql-gen-go/internal/graphql"
+	"github.com/thepwagner/graphql-gen-go/internal/test"
 )
 
 func TestIndexSchema_SWAPI(t *testing.T) {
@@ -23,7 +23,7 @@ func TestIndexSchema_SWAPI(t *testing.T) {
 
 			//   name: String!
 			fieldType := personName.FieldType
-			assert.True(t, fieldType.Primitive)
+			assert.True(t, fieldType.Scalar)
 			assert.True(t, fieldType.NonNull)
 			assert.False(t, fieldType.List)
 			assert.Equal(t, "string", fieldType.Go)

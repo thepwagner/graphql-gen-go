@@ -1,16 +1,32 @@
 package swapi_test
 
 import (
-	"fmt"
+	"bytes"
+	"encoding/json"
 	"testing"
 
-	"github.com/thepwagner/magenny/internal/test/swapi/generated"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
+
+	"github.com/thepwagner/graphql-gen-go/internal/test/swapi/generated"
 )
 
 func TestAPI(t *testing.T) {
-	f := ""
+	droid := &generated.Species{Name: "Droid"}
+	jawa := &generated.Species{Name: "Jawa"}
 	r2 := generated.Person{
-		Name: &f,
+		Name:      "R2D2",
+		HairColor: "Chrome",
+		Species:   []*generated.Species{droid, jawa},
 	}
-	fmt.Printf("%+v\n", r2)
+	personJSON, err := json.Marshal(map[string]generated.Person{"person": r2})
+	require.NoError(t, err)
+
+	personByID, err := generated.ReadPersonByID(bytes.NewReader(personJSON))
+	require.NoError(t, err)
+
+	person := personByID.GetPersonByIDPerson()
+	assert.Equal(t, "R2D2", person.GetName())
+	assert.Equal(t, "Chrome", person.GetHairColor())
+	assert.Equal(t, []generated.PersonByIDPersonSpecies{droid, jawa}, person.GetPersonByIDPersonSpecies())
 }

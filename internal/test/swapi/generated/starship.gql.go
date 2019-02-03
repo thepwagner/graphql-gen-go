@@ -21,3 +21,75 @@ type Starship struct {
 	Edited               *string
 	Id                   string
 }
+
+func (r Starship) GetName() *string {
+	return r.Name
+}
+
+func (r Starship) GetModel() *string {
+	return r.Model
+}
+
+func (r Starship) GetStarshipClass() *string {
+	return r.StarshipClass
+}
+
+func (r Starship) GetManufacturers() []*string {
+	return r.Manufacturers
+}
+
+func (r Starship) GetCostInCredits() *float64 {
+	return r.CostInCredits
+}
+
+func (r Starship) GetLength() *float64 {
+	return r.Length
+}
+
+func (r Starship) GetCrew() *string {
+	return r.Crew
+}
+
+func (r Starship) GetPassengers() *string {
+	return r.Passengers
+}
+
+func (r Starship) GetMaxAtmospheringSpeed() *int64 {
+	return r.MaxAtmospheringSpeed
+}
+
+func (r Starship) GetHyperdriveRating() *float64 {
+	return r.HyperdriveRating
+}
+
+func (r Starship) GetMGLT() *int64 {
+	return r.MGLT
+}
+
+func (r Starship) GetCargoCapacity() *float64 {
+	return r.CargoCapacity
+}
+
+func (r Starship) GetConsumables() *string {
+	return r.Consumables
+}
+
+func (r Starship) GetPilots() []*Person {
+	return r.Pilots
+}
+
+func (r Starship) GetFilms() []*Film {
+	return r.Films
+}
+
+func (r Starship) GetCreated() *string {
+	return r.Created
+}
+
+func (r Starship) GetEdited() *string {
+	return r.Edited
+}
+
+func (r Starship) GetId() string {
+	return r.Id
+}

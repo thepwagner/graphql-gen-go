@@ -16,3 +16,55 @@ type RootQuery struct {
 	Vehicle      *Vehicle
 	Node         *Node
 }
+
+func (r RootQuery) GetAllFilms() []*Film {
+	return r.AllFilms
+}
+
+func (r RootQuery) GetFilm() *Film {
+	return r.Film
+}
+
+func (r RootQuery) GetAllPeople() []*Person {
+	return r.AllPeople
+}
+
+func (r RootQuery) GetPerson() *Person {
+	return r.Person
+}
+
+func (r RootQuery) GetAllPlanets() []*Planet {
+	return r.AllPlanets
+}
+
+func (r RootQuery) GetPlanet() *Planet {
+	return r.Planet
+}
+
+func (r RootQuery) GetAllSpecies() []*Species {
+	return r.AllSpecies
+}
+
+func (r RootQuery) GetSpecies() *Species {
+	return r.Species
+}
+
+func (r RootQuery) GetAllStarships() []*Starship {
+	return r.AllStarships
+}
+
+func (r RootQuery) GetStarship() *Starship {
+	return r.Starship
+}
+
+func (r RootQuery) GetAllVehicles() []*Vehicle {
+	return r.AllVehicles
+}
+
+func (r RootQuery) GetVehicle() *Vehicle {
+	return r.Vehicle
+}
+
+func (r RootQuery) GetNode() *Node {
+	return r.Node
+}

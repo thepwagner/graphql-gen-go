@@ -8,10 +8,10 @@ import (
 
 // TODO: this is too simple - i could have a list of lists of lists
 type FieldType struct {
-	List      bool
-	NonNull   bool
-	Go        string
-	Primitive bool
+	List    bool
+	NonNull bool
+	Go      string
+	Scalar  bool
 }
 
 func NewFieldType(def *ast.FieldDefinition) FieldType {
@@ -28,13 +28,13 @@ func NewFieldType(def *ast.FieldDefinition) FieldType {
 			switch o.Name.Value {
 			case "String", "ID":
 				f.Go = "string"
-				f.Primitive = true
+				f.Scalar = true
 			case "Int":
 				f.Go = "int64"
-				f.Primitive = true
+				f.Scalar = true
 			case "Float":
 				f.Go = "float64"
-				f.Primitive = true
+				f.Scalar = true
 			default:
 				f.Go = o.Name.Value
 			}

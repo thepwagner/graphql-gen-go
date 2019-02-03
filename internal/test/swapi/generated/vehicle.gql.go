@@ -19,3 +19,67 @@ type Vehicle struct {
 	Edited               *string
 	Id                   string
 }
+
+func (r Vehicle) GetName() *string {
+	return r.Name
+}
+
+func (r Vehicle) GetModel() *string {
+	return r.Model
+}
+
+func (r Vehicle) GetVehicleClass() *string {
+	return r.VehicleClass
+}
+
+func (r Vehicle) GetManufacturers() []*string {
+	return r.Manufacturers
+}
+
+func (r Vehicle) GetCostInCredits() *int64 {
+	return r.CostInCredits
+}
+
+func (r Vehicle) GetLength() *float64 {
+	return r.Length
+}
+
+func (r Vehicle) GetCrew() *string {
+	return r.Crew
+}
+
+func (r Vehicle) GetPassengers() *string {
+	return r.Passengers
+}
+
+func (r Vehicle) GetMaxAtmospheringSpeed() *int64 {
+	return r.MaxAtmospheringSpeed
+}
+
+func (r Vehicle) GetCargoCapacity() *int64 {
+	return r.CargoCapacity
+}
+
+func (r Vehicle) GetConsumables() *string {
+	return r.Consumables
+}
+
+func (r Vehicle) GetPilots() []*Person {
+	return r.Pilots
+}
+
+func (r Vehicle) GetFilms() []*Film {
+	return r.Films
+}
+
+func (r Vehicle) GetCreated() *string {
+	return r.Created
+}
+
+func (r Vehicle) GetEdited() *string {
+	return r.Edited
+}
+
+func (r Vehicle) GetId() string {
+	return r.Id
+}

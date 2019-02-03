@@ -8,3 +8,23 @@ type FilmDetails struct {
 	Characters []*Person
 	Planets    []*Planet
 }
+
+func (r FilmDetails) GetSpecies() []*Species {
+	return r.Species
+}
+
+func (r FilmDetails) GetStarships() []*Starship {
+	return r.Starships
+}
+
+func (r FilmDetails) GetVehicles() []*Vehicle {
+	return r.Vehicles
+}
+
+func (r FilmDetails) GetCharacters() []*Person {
+	return r.Characters
+}
+
+func (r FilmDetails) GetPlanets() []*Planet {
+	return r.Planets
+}

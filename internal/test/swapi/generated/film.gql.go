@@ -13,3 +13,43 @@ type Film struct {
 	Details      *FilmDetails
 	Id           string
 }
+
+func (r Film) GetTitle() *string {
+	return r.Title
+}
+
+func (r Film) GetEpisodeID() *int64 {
+	return r.EpisodeID
+}
+
+func (r Film) GetOpeningCrawl() *string {
+	return r.OpeningCrawl
+}
+
+func (r Film) GetDirector() *string {
+	return r.Director
+}
+
+func (r Film) GetProducers() []*string {
+	return r.Producers
+}
+
+func (r Film) GetReleaseDate() *string {
+	return r.ReleaseDate
+}
+
+func (r Film) GetCreated() *string {
+	return r.Created
+}
+
+func (r Film) GetEdited() *string {
+	return r.Edited
+}
+
+func (r Film) GetDetails() *FilmDetails {
+	return r.Details
+}
+
+func (r Film) GetId() string {
+	return r.Id
+}

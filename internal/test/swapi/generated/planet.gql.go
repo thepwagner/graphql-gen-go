@@ -17,3 +17,59 @@ type Planet struct {
 	Edited         *string
 	Id             string
 }
+
+func (r Planet) GetName() *string {
+	return r.Name
+}
+
+func (r Planet) GetDiameter() *int64 {
+	return r.Diameter
+}
+
+func (r Planet) GetRotationPeriod() *int64 {
+	return r.RotationPeriod
+}
+
+func (r Planet) GetOrbitalPeriod() *int64 {
+	return r.OrbitalPeriod
+}
+
+func (r Planet) GetGravity() *string {
+	return r.Gravity
+}
+
+func (r Planet) GetPopulation() *int64 {
+	return r.Population
+}
+
+func (r Planet) GetClimates() []*string {
+	return r.Climates
+}
+
+func (r Planet) GetTerrains() []*string {
+	return r.Terrains
+}
+
+func (r Planet) GetSurfaceWater() *float64 {
+	return r.SurfaceWater
+}
+
+func (r Planet) GetResidents() []*Person {
+	return r.Residents
+}
+
+func (r Planet) GetFilms() []*Film {
+	return r.Films
+}
+
+func (r Planet) GetCreated() *string {
+	return r.Created
+}
+
+func (r Planet) GetEdited() *string {
+	return r.Edited
+}
+
+func (r Planet) GetId() string {
+	return r.Id
+}
