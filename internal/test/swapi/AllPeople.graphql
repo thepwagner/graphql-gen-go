@@ -1,0 +1,9 @@
+query AllPeople {
+    allPeople {
+        name
+        hairColor
+        films {
+            title
+        }
+    }
+}

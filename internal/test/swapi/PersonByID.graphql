@@ -1,0 +1,9 @@
+query PersonByID($id: ID!) {
+    person(personID: $id) {
+        name
+        hairColor
+        species {
+            name
+        }
+    }
+}

@@ -9,6 +9,7 @@ import (
 	"strings"
 
 	"github.com/graphql-go/graphql/language/ast"
+	log "github.com/sirupsen/logrus"
 
 	"github.com/thepwagner/graphql-gen-go/internal/graphql"
 )
@@ -50,6 +51,10 @@ func Read%s(r io.Reader) (%s, error) {
 			return err
 		}
 	}
+	log.WithFields(log.Fields{
+		"types":   len(types),
+		"queries": len(queries),
+	}).Debug("Generated go code.")
 
 	return nil
 }

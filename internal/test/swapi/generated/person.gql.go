@@ -84,17 +84,17 @@ func (r Person) GetId() string {
 	return r.Id
 }
 
-func (r Person) GetPersonByIDPersonSpecies() []PersonByIDPersonSpecies {
-	ret := make([]PersonByIDPersonSpecies, len(r.Species))
-	for i, o := range r.Species {
+func (r Person) GetAllPeopleAllPeopleFilms() []AllPeopleAllPeopleFilms {
+	ret := make([]AllPeopleAllPeopleFilms, len(r.Films))
+	for i, o := range r.Films {
 		ret[i] = o
 	}
 	return ret
 }
 
-func (r Person) GetAllPeopleAllPeopleFilms() []AllPeopleAllPeopleFilms {
-	ret := make([]AllPeopleAllPeopleFilms, len(r.Films))
-	for i, o := range r.Films {
+func (r Person) GetPersonByIDPersonSpecies() []PersonByIDPersonSpecies {
+	ret := make([]PersonByIDPersonSpecies, len(r.Species))
+	for i, o := range r.Species {
 		ret[i] = o
 	}
 	return ret
