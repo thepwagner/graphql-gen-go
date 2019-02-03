@@ -97,7 +97,7 @@ func viewInterfaces(types map[string]*goTypeTemplateParams, prefix, name string,
 					goType = fmt.Sprintf("[]%s", goType)
 
 					// Add a function to the model type to satisfy the invariant list
-					hostType := types[name]
+					hostType := types[typePtr.Name]
 					hostType.Funcs = append(hostType.Funcs, &goFunc{
 						Signature: fmt.Sprintf("%s %s", methodName, goType),
 						Body: fmt.Sprintf(`ret := make(%s, len(r.%s))
@@ -145,10 +145,22 @@ func implStruct(name string, selSet *ast.SelectionSet, typePtr *graphql.Type) (*
 				goType = fmt.Sprintf("%s%s", name, selNameTitle)
 			}
 
-			params.Funcs = append(params.Funcs, &goFunc{
-				Signature: fmt.Sprintf("Get%s%s() %s", name, selNameTitle, goType),
-				Body:      fmt.Sprintf(`	return r.%s`, selNameTitle),
-			})
+			if indexedField.FieldType.List {
+				params.Funcs = append(params.Funcs, &goFunc{
+					Signature: fmt.Sprintf("Get%s%s() []%s", name, selNameTitle, goType),
+
+					Body: fmt.Sprintf(`ret := make([]%s, len(r.%s))
+	for i, o := range r.%s {
+		ret[i] = o
+	} 
+	return ret`, goType, selNameTitle, selNameTitle),
+				})
+			} else {
+				params.Funcs = append(params.Funcs, &goFunc{
+					Signature: fmt.Sprintf("Get%s%s() %s", name, selNameTitle, goType),
+					Body:      fmt.Sprintf(`	return r.%s`, selNameTitle),
+				})
+			}
 		}
 	}
 

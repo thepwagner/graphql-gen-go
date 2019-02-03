@@ -1,4 +1,4 @@
-module github.com/thepwagner/magenny
+module github.com/thepwagner/graphql-gen-go
 
 require (
 	github.com/coreos/etcd v3.3.11+incompatible // indirect

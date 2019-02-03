@@ -91,3 +91,11 @@ func (r Person) GetPersonByIDPersonSpecies() []PersonByIDPersonSpecies {
 	}
 	return ret
 }
+
+func (r Person) GetAllPeopleAllPeopleFilms() []AllPeopleAllPeopleFilms {
+	ret := make([]AllPeopleAllPeopleFilms, len(r.Films))
+	for i, o := range r.Films {
+		ret[i] = o
+	}
+	return ret
+}

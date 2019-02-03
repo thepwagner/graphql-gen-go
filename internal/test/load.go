@@ -45,7 +45,7 @@ func SetupOutputDir(t *testing.T, testSchema Schema) string {
 func findTestDir(t *testing.T) string {
 	dir, err := os.Getwd()
 	require.NoError(t, err)
-	projectPath := filepath.Join("github.com", "thepwagner", "magenny")
+	projectPath := filepath.Join("github.com", "thepwagner", "graphql-gen-go")
 	split := strings.SplitN(dir, projectPath, 2)
 	require.Len(t, split, 2, "could not find GOROOT")
 	goRoot := split[0]

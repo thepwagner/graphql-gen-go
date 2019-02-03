@@ -15,15 +15,25 @@ func TestGenerate_SWAPI(t *testing.T) {
 
 	const personByID = `
 query PersonByID($id: ID!) {
- person(personID: $id) {
-   name
-   hairColor
-   species {
-     name
-   }
- }
+  person(personID: $id) {
+    name
+    hairColor
+    species {
+      name
+    }
+  }
+}`
+	const listPeople = `
+query AllPeople {
+  allPeople {
+    name
+    hairColor
+    films {
+      title
+    }
+  }
 }`
 
-	err := generator.Generate(output, schema, personByID)
+	err := generator.Generate(output, schema, personByID, listPeople)
 	assert.NoError(t, err)
 }

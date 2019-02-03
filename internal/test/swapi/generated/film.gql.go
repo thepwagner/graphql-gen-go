@@ -2,7 +2,7 @@
 package generated
 
 type Film struct {
-	Title        *string
+	Title        string
 	EpisodeID    *int64
 	OpeningCrawl *string
 	Director     *string
@@ -14,7 +14,7 @@ type Film struct {
 	Id           string
 }
 
-func (r Film) GetTitle() *string {
+func (r Film) GetTitle() string {
 	return r.Title
 }
 

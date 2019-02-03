@@ -8,7 +8,7 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "magenny",
+	Use:   "graphql-gen-go",
 	Short: "Generate GraphQL queries and types",
 }
 

@@ -68,3 +68,11 @@ func (r RootQuery) GetVehicle() *Vehicle {
 func (r RootQuery) GetNode() *Node {
 	return r.Node
 }
+
+func (r RootQuery) GetAllPeopleAllPeople() []AllPeopleAllPeople {
+	ret := make([]AllPeopleAllPeople, len(r.AllPeople))
+	for i, o := range r.AllPeople {
+		ret[i] = o
+	}
+	return ret
+}

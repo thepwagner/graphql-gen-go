@@ -33,7 +33,7 @@ type FilmDetails {
 }
 
 type Film implements Node {
-  title: String
+  title: String!
   episodeID: Int
   openingCrawl: String
   director: String
