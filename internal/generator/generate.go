@@ -63,14 +63,9 @@ func Read%s(r io.Reader) (%s, error) {
 func newModelType(gqlType graphql.Type) *goTypeTemplateParams {
 	var fields []*goField
 	var funcs []*goFunc
-	var maxFieldNameLen int
 	for _, gqlField := range gqlType.Fields {
 		fieldName := gqlField.Name
 		gqlField := gqlType.FieldIndex[fieldName]
-
-		if nameLen := len(fieldName); nameLen > maxFieldNameLen {
-			maxFieldNameLen = nameLen
-		}
 
 		fieldName = strings.Title(fieldName)
 		if !gqlType.Interface {
@@ -86,13 +81,6 @@ func newModelType(gqlType graphql.Type) *goTypeTemplateParams {
 			Name: fieldName,
 			Type: gqlField.FieldType.GoType(),
 		})
-	}
-
-	// Pad field names to the longest name's length, for alignment:
-	for _, field := range fields {
-		if pad := maxFieldNameLen - len(field.Name); pad > 0 {
-			field.Name = field.Name + strings.Repeat(" ", pad)
-		}
 	}
 
 	return &goTypeTemplateParams{
