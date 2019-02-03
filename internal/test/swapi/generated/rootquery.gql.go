@@ -2,19 +2,19 @@
 package generated
 
 type RootQuery struct {
-	AllFilms     []*Film
-	Film         *Film
-	AllPeople    []*Person
-	Person       *Person
-	AllPlanets   []*Planet
-	Planet       *Planet
-	AllSpecies   []*Species
-	Species      *Species
-	AllStarships []*Starship
-	Starship     *Starship
-	AllVehicles  []*Vehicle
-	Vehicle      *Vehicle
-	Node         *Node
+	AllFilms     []*Film     `json:"allFilms,omitempty"`
+	Film         *Film       `json:"film,omitempty"`
+	AllPeople    []*Person   `json:"allPeople,omitempty"`
+	Person       *Person     `json:"person,omitempty"`
+	AllPlanets   []*Planet   `json:"allPlanets,omitempty"`
+	Planet       *Planet     `json:"planet,omitempty"`
+	AllSpecies   []*Species  `json:"allSpecies,omitempty"`
+	Species      *Species    `json:"species,omitempty"`
+	AllStarships []*Starship `json:"allStarships,omitempty"`
+	Starship     *Starship   `json:"starship,omitempty"`
+	AllVehicles  []*Vehicle  `json:"allVehicles,omitempty"`
+	Vehicle      *Vehicle    `json:"vehicle,omitempty"`
+	Node         *Node       `json:"node,omitempty"`
 }
 
 func (r RootQuery) GetAllFilms() []*Film {

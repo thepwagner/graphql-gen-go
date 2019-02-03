@@ -2,24 +2,24 @@
 package generated
 
 type Starship struct {
-	Name                 *string
-	Model                *string
-	StarshipClass        *string
-	Manufacturers        []*string
-	CostInCredits        *float64
-	Length               *float64
-	Crew                 *string
-	Passengers           *string
-	MaxAtmospheringSpeed *int64
-	HyperdriveRating     *float64
-	MGLT                 *int64
-	CargoCapacity        *float64
-	Consumables          *string
-	Pilots               []*Person
-	Films                []*Film
-	Created              *string
-	Edited               *string
-	Id                   string
+	Name                 *string   `json:"name,omitempty"`
+	Model                *string   `json:"model,omitempty"`
+	StarshipClass        *string   `json:"starshipClass,omitempty"`
+	Manufacturers        []*string `json:"manufacturers,omitempty"`
+	CostInCredits        *float64  `json:"costInCredits,omitempty"`
+	Length               *float64  `json:"length,omitempty"`
+	Crew                 *string   `json:"crew,omitempty"`
+	Passengers           *string   `json:"passengers,omitempty"`
+	MaxAtmospheringSpeed *int64    `json:"maxAtmospheringSpeed,omitempty"`
+	HyperdriveRating     *float64  `json:"hyperdriveRating,omitempty"`
+	MGLT                 *int64    `json:"MGLT,omitempty"`
+	CargoCapacity        *float64  `json:"cargoCapacity,omitempty"`
+	Consumables          *string   `json:"consumables,omitempty"`
+	Pilots               []*Person `json:"pilots,omitempty"`
+	Films                []*Film   `json:"films,omitempty"`
+	Created              *string   `json:"created,omitempty"`
+	Edited               *string   `json:"edited,omitempty"`
+	Id                   string    `json:"id,omitempty"`
 }
 
 func (r Starship) GetName() *string {

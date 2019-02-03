@@ -3,6 +3,7 @@ package swapi_test
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -40,6 +41,7 @@ func TestAPI(t *testing.T) {
 	// TODO: generate client to make performing this against an http server ezpz
 	personJSON, err := json.Marshal(map[string]generated.Person{"person": r2})
 	require.NoError(t, err)
+	fmt.Println(string(personJSON))
 
 	// Use generated deser to read the mocked response:
 	personByID, err := generated.ReadPersonByID(bytes.NewReader(personJSON))
@@ -57,6 +59,7 @@ func TestAPI(t *testing.T) {
 	// AllPerson
 	personsJSON, err := json.Marshal(map[string][]generated.Person{"allPeople": {r2, hanSolo}})
 	require.NoError(t, err)
+	fmt.Println(string(personsJSON))
 	allPeople, err := generated.ReadAllPeople(bytes.NewReader(personsJSON))
 	require.NoError(t, err)
 	assert.Len(t, allPeople.GetAllPeopleAllPeople(), 2)
@@ -73,5 +76,4 @@ func TestAPI(t *testing.T) {
 			assert.Fail(t, "unknown person")
 		}
 	}
-
 }

@@ -2,16 +2,16 @@
 package generated
 
 type Film struct {
-	Title        string
-	EpisodeID    *int64
-	OpeningCrawl *string
-	Director     *string
-	Producers    []*string
-	ReleaseDate  *string
-	Created      *string
-	Edited       *string
-	Details      *FilmDetails
-	Id           string
+	Title        string       `json:"title,omitempty"`
+	EpisodeID    *int64       `json:"episodeID,omitempty"`
+	OpeningCrawl *string      `json:"openingCrawl,omitempty"`
+	Director     *string      `json:"director,omitempty"`
+	Producers    []*string    `json:"producers,omitempty"`
+	ReleaseDate  *string      `json:"releaseDate,omitempty"`
+	Created      *string      `json:"created,omitempty"`
+	Edited       *string      `json:"edited,omitempty"`
+	Details      *FilmDetails `json:"details,omitempty"`
+	Id           string       `json:"id,omitempty"`
 }
 
 func (r Film) GetTitle() string {

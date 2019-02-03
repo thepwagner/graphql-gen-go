@@ -2,22 +2,22 @@
 package generated
 
 type Vehicle struct {
-	Name                 *string
-	Model                *string
-	VehicleClass         *string
-	Manufacturers        []*string
-	CostInCredits        *int64
-	Length               *float64
-	Crew                 *string
-	Passengers           *string
-	MaxAtmospheringSpeed *int64
-	CargoCapacity        *int64
-	Consumables          *string
-	Pilots               []*Person
-	Films                []*Film
-	Created              *string
-	Edited               *string
-	Id                   string
+	Name                 *string   `json:"name,omitempty"`
+	Model                *string   `json:"model,omitempty"`
+	VehicleClass         *string   `json:"vehicleClass,omitempty"`
+	Manufacturers        []*string `json:"manufacturers,omitempty"`
+	CostInCredits        *int64    `json:"costInCredits,omitempty"`
+	Length               *float64  `json:"length,omitempty"`
+	Crew                 *string   `json:"crew,omitempty"`
+	Passengers           *string   `json:"passengers,omitempty"`
+	MaxAtmospheringSpeed *int64    `json:"maxAtmospheringSpeed,omitempty"`
+	CargoCapacity        *int64    `json:"cargoCapacity,omitempty"`
+	Consumables          *string   `json:"consumables,omitempty"`
+	Pilots               []*Person `json:"pilots,omitempty"`
+	Films                []*Film   `json:"films,omitempty"`
+	Created              *string   `json:"created,omitempty"`
+	Edited               *string   `json:"edited,omitempty"`
+	Id                   string    `json:"id,omitempty"`
 }
 
 func (r Vehicle) GetName() *string {

@@ -2,11 +2,11 @@
 package generated
 
 type FilmDetails struct {
-	Species    []*Species
-	Starships  []*Starship
-	Vehicles   []*Vehicle
-	Characters []*Person
-	Planets    []*Planet
+	Species    []*Species  `json:"species,omitempty"`
+	Starships  []*Starship `json:"starships,omitempty"`
+	Vehicles   []*Vehicle  `json:"vehicles,omitempty"`
+	Characters []*Person   `json:"characters,omitempty"`
+	Planets    []*Planet   `json:"planets,omitempty"`
 }
 
 func (r FilmDetails) GetSpecies() []*Species {

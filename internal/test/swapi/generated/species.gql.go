@@ -2,21 +2,21 @@
 package generated
 
 type Species struct {
-	Name            string
-	Classification  *string
-	Designation     *string
-	AverageHeight   *float64
-	AverageLifespan *int64
-	EyeColors       []*string
-	HairColors      []*string
-	SkinColors      []*string
-	Language        *string
-	Homeworld       *Planet
-	People          []*Person
-	Films           []*Film
-	Created         *string
-	Edited          *string
-	Id              string
+	Name            string    `json:"name,omitempty"`
+	Classification  *string   `json:"classification,omitempty"`
+	Designation     *string   `json:"designation,omitempty"`
+	AverageHeight   *float64  `json:"averageHeight,omitempty"`
+	AverageLifespan *int64    `json:"averageLifespan,omitempty"`
+	EyeColors       []*string `json:"eyeColors,omitempty"`
+	HairColors      []*string `json:"hairColors,omitempty"`
+	SkinColors      []*string `json:"skinColors,omitempty"`
+	Language        *string   `json:"language,omitempty"`
+	Homeworld       *Planet   `json:"homeworld,omitempty"`
+	People          []*Person `json:"people,omitempty"`
+	Films           []*Film   `json:"films,omitempty"`
+	Created         *string   `json:"created,omitempty"`
+	Edited          *string   `json:"edited,omitempty"`
+	Id              string    `json:"id,omitempty"`
 }
 
 func (r Species) GetName() string {

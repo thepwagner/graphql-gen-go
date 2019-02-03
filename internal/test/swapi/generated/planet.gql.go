@@ -2,20 +2,20 @@
 package generated
 
 type Planet struct {
-	Name           *string
-	Diameter       *int64
-	RotationPeriod *int64
-	OrbitalPeriod  *int64
-	Gravity        *string
-	Population     *int64
-	Climates       []*string
-	Terrains       []*string
-	SurfaceWater   *float64
-	Residents      []*Person
-	Films          []*Film
-	Created        *string
-	Edited         *string
-	Id             string
+	Name           *string   `json:"name,omitempty"`
+	Diameter       *int64    `json:"diameter,omitempty"`
+	RotationPeriod *int64    `json:"rotationPeriod,omitempty"`
+	OrbitalPeriod  *int64    `json:"orbitalPeriod,omitempty"`
+	Gravity        *string   `json:"gravity,omitempty"`
+	Population     *int64    `json:"population,omitempty"`
+	Climates       []*string `json:"climates,omitempty"`
+	Terrains       []*string `json:"terrains,omitempty"`
+	SurfaceWater   *float64  `json:"surfaceWater,omitempty"`
+	Residents      []*Person `json:"residents,omitempty"`
+	Films          []*Film   `json:"films,omitempty"`
+	Created        *string   `json:"created,omitempty"`
+	Edited         *string   `json:"edited,omitempty"`
+	Id             string    `json:"id,omitempty"`
 }
 
 func (r Planet) GetName() *string {

@@ -2,22 +2,22 @@
 package generated
 
 type Person struct {
-	Name      string
-	BirthYear *string
-	EyeColor  *string
-	Gender    *string
-	HairColor string
-	Height    *int64
-	Mass      *int64
-	SkinColor *string
-	Homeworld *Planet
-	Films     []*Film
-	Species   []*Species
-	Starships []*Starship
-	Vehicles  []*Vehicle
-	Created   *string
-	Edited    *string
-	Id        string
+	Name      string      `json:"name,omitempty"`
+	BirthYear *string     `json:"birthYear,omitempty"`
+	EyeColor  *string     `json:"eyeColor,omitempty"`
+	Gender    *string     `json:"gender,omitempty"`
+	HairColor string      `json:"hairColor,omitempty"`
+	Height    *int64      `json:"height,omitempty"`
+	Mass      *int64      `json:"mass,omitempty"`
+	SkinColor *string     `json:"skinColor,omitempty"`
+	Homeworld *Planet     `json:"homeworld,omitempty"`
+	Films     []*Film     `json:"films,omitempty"`
+	Species   []*Species  `json:"species,omitempty"`
+	Starships []*Starship `json:"starships,omitempty"`
+	Vehicles  []*Vehicle  `json:"vehicles,omitempty"`
+	Created   *string     `json:"created,omitempty"`
+	Edited    *string     `json:"edited,omitempty"`
+	Id        string      `json:"id,omitempty"`
 }
 
 func (r Person) GetName() string {
@@ -84,17 +84,17 @@ func (r Person) GetId() string {
 	return r.Id
 }
 
-func (r Person) GetAllPeopleAllPeopleFilms() []AllPeopleAllPeopleFilms {
-	ret := make([]AllPeopleAllPeopleFilms, len(r.Films))
-	for i, o := range r.Films {
+func (r Person) GetPersonByIDPersonSpecies() []PersonByIDPersonSpecies {
+	ret := make([]PersonByIDPersonSpecies, len(r.Species))
+	for i, o := range r.Species {
 		ret[i] = o
 	}
 	return ret
 }
 
-func (r Person) GetPersonByIDPersonSpecies() []PersonByIDPersonSpecies {
-	ret := make([]PersonByIDPersonSpecies, len(r.Species))
-	for i, o := range r.Species {
+func (r Person) GetAllPeopleAllPeopleFilms() []AllPeopleAllPeopleFilms {
+	ret := make([]AllPeopleAllPeopleFilms, len(r.Films))
+	for i, o := range r.Films {
 		ret[i] = o
 	}
 	return ret

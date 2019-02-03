@@ -73,14 +73,17 @@ func newModelType(gqlType graphql.Type) *goTypeTemplateParams {
 				Signature: fmt.Sprintf("Get%s() %s", fieldName, gqlField.FieldType.GoType()),
 				Body:      fmt.Sprintf(`	return r.%s`, fieldName),
 			})
+			fields = append(fields, &goField{
+				Name: fieldName,
+				Type: gqlField.FieldType.GoType(),
+				Tags: fmt.Sprintf(`json:"%s,omitempty"`, gqlField.Name),
+			})
 		} else {
-			fieldName += "()"
+			fields = append(fields, &goField{
+				Name: fmt.Sprintf("%s()", fieldName),
+				Type: gqlField.FieldType.GoType(),
+			})
 		}
-
-		fields = append(fields, &goField{
-			Name: fieldName,
-			Type: gqlField.FieldType.GoType(),
-		})
 	}
 
 	return &goTypeTemplateParams{
@@ -108,6 +111,7 @@ func writeGoFile(dir, name string, code string, params ...*goTypeTemplateParams)
 	// Format, so that templates can be readable:
 	formatted, err := format.Source(buf.Bytes())
 	if err != nil {
+		log.WithError(err).Warn(buf.String())
 		return err
 	}
 
